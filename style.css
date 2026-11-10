@@ -1,0 +1,106 @@
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+:root {
+  color-scheme: light;
+  --paper: #f8f5ed;
+  --ink: #191812;
+  --muted: #625d52;
+  --line: #ddd6c7;
+  --white: #fffdf8;
+  --yellow: #f5c42c;
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+  color: var(--ink);
+  background: #eee9dd;
+}
+
+body { margin: 0; }
+.page {
+  width: min(100%, 520px);
+  min-height: 100svh;
+  margin-inline: auto;
+  padding: 0 clamp(16px, 5.5vw, 32px);
+  background: var(--paper);
+}
+
+.profile { padding-top: 22px; text-align: center; }
+.eyebrow, .section-label, footer {
+  font: 800 11px/1.3 system-ui, sans-serif;
+  letter-spacing: .14em;
+}
+.eyebrow { display: inline-flex; align-items: center; gap: 7px; }
+.brand-dot { width: 7px; height: 7px; border-radius: 50%; background: #e7ae18; }
+.mascot {
+  display: grid;
+  place-items: center;
+  width: 134px;
+  height: 99px;
+  margin: 11px auto 3px;
+  border-radius: 45%;
+  background: #f0e9d9;
+}
+.mascot img { width: 112px; height: auto; mix-blend-mode: multiply; }
+h1 {
+  margin: 0;
+  font: 950 clamp(46px, 13vw, 68px)/.99 system-ui, sans-serif;
+  letter-spacing: -.085em;
+}
+.wordmark-dot { color: #bd8a00; margin-left: .045em; }
+.service { margin: 10px 0 0; font-size: 17px; font-weight: 800; letter-spacing: -.045em; }
+.tagline { margin: 8px 0 0; font-size: 14px; color: var(--muted); letter-spacing: -.035em; }
+.location {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 12px 0 0;
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: -.035em;
+  color: var(--muted);
+  line-height: 1.45;
+}
+svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.location svg { width: 15px; height: 15px; flex: none; }
+
+.actions { display: grid; gap: 8px; margin-top: 18px; }
+.action {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) 48px;
+  align-items: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 8px 13px;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -.035em;
+  text-decoration: none;
+}
+.action-primary { background: var(--yellow); border-color: #e9bc2d; }
+.action svg { width: 23px; height: 23px; }
+.action-end { justify-self: end; }
+.action[href] .action-end::after { content: "↗"; font-size: 19px; }
+.action[aria-disabled="true"] { cursor: default; }
+.action[aria-disabled="true"] .action-end::after { content: "준비 중"; font-size: 11px; color: #514b3d; }
+.action:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.action[href]:active { transform: translateY(1px); }
+
+.section { border-top: 1px solid var(--line); margin-top: 32px; padding-top: 21px; }
+.section-label { display: flex; gap: 9px; align-items: center; color: var(--muted); margin: 0 0 12px; }
+.section-label span { color: var(--ink); border: 1px solid var(--line); border-radius: 5px; padding: 4px 5px; letter-spacing: 0; }
+h2 { margin: 0; font-size: clamp(25px, 7.2vw, 35px); line-height: 1.25; letter-spacing: -.065em; }
+.copy { margin: 12px 0 0; color: var(--muted); font-size: 15px; line-height: 1.75; word-break: keep-all; }
+.entrance { margin: 15px 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.entrance img { display: block; width: 100%; height: auto; }
+.photo-placeholder { display: grid; place-items: center; min-height: 124px; color: var(--muted); font-size: 13px; background: #f0e9d9; }
+figcaption { padding: 9px 12px; color: var(--muted); font-size: 12px; }
+.address { display: flex; gap: 11px; align-items: flex-start; font-size: 14px; }
+.address p { margin: 0 0 4px; line-height: 1.5; }
+.address p:not(:first-child) { color: var(--muted); word-break: keep-all; overflow-wrap: anywhere; }
+.floor { padding: 4px 8px; color: var(--white); background: var(--ink); border-radius: 5px; font: 800 14px/1.3 system-ui, sans-serif; }
+footer { display: flex; justify-content: space-between; margin-top: 29px; padding: 16px 0 22px; border-top: 1px solid var(--line); color: var(--muted); }
