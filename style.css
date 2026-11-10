@@ -102,5 +102,10 @@ figcaption { padding: 9px 12px; color: var(--muted); font-size: 12px; }
 .address { display: flex; gap: 11px; align-items: flex-start; font-size: 14px; }
 .address p { margin: 0 0 4px; line-height: 1.5; }
 .address p:not(:first-child) { color: var(--muted); word-break: keep-all; overflow-wrap: anywhere; }
+.arrival { margin: 12px 0 0; line-height: 1.5; word-break: keep-all; }
+.arrival dt { font-weight: 800; }
+.arrival dt:not(:first-child) { margin-top: 9px; }
+.arrival dd { margin: 2px 0 0; color: var(--muted); }
+.arrival a[href] { color: var(--ink); text-underline-offset: 3px; }
 .floor { padding: 4px 8px; color: var(--white); background: var(--ink); border-radius: 5px; font: 800 14px/1.3 system-ui, sans-serif; }
 footer { display: flex; justify-content: space-between; margin-top: 29px; padding: 16px 0 22px; border-top: 1px solid var(--line); color: var(--muted); }

@@ -28,7 +28,9 @@ function enableLink(id, href) {
 
 enableLink("kakao", webUrl(site.kakaoChatUrl));
 const phone = site.phoneNumber.trim().replace(/[\s().-]/g, "");
-enableLink("phone", /^\+?\d{7,15}$/.test(phone) ? `tel:${phone}` : "");
+const phoneHref = /^\+?\d{7,15}$/.test(phone) ? `tel:${phone}` : "";
+enableLink("phone", phoneHref);
+enableLink("parking-phone", phoneHref);
 enableLink("place", webUrl(site.naverPlaceUrl));
 
 document.getElementById("logo").src = site.logoPath;
