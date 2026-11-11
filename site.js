@@ -2,6 +2,7 @@ const site = {
   kakaoChatUrl: "",
   phoneNumber: "010-4538-9195",
   naverPlaceUrl: "",
+  blogUrl: "",
   address: "인천 부평구 길주남로10번길 21",
   entranceNote: "상가 정면의 유리문 계단 입구로 들어와 지하 1층(B1)으로 내려오세요.",
   entrancePhotoPath: "./assets/entrance.jpg",
@@ -29,6 +30,7 @@ enableLink("kakao", webUrl(site.kakaoChatUrl));
 const phone = site.phoneNumber.trim().replace(/[\s().-]/g, "");
 enableLink("phone", /^\+?\d{7,15}$/.test(phone) ? `tel:${phone}` : "");
 enableLink("place", webUrl(site.naverPlaceUrl));
+enableLink("blog", webUrl(site.blogUrl));
 
 function showText(id, value) {
   if (!value) return;
