@@ -1,8 +1,8 @@
 const site = {
-  kakaoChatUrl: "",
+  kakaoChatUrl: "https://pf.kakao.com/_xeXpNX/chat",
   phoneNumber: "010-4538-9195",
-  naverPlaceUrl: "",
-  blogUrl: "",
+  naverPlaceUrl: "https://naver.me/GQGxaCWJ",
+  blogUrl: "https://blog.naver.com/jellyfitness",
   address: "인천 부평구 길주남로10번길 21",
   entranceNote: "상가 정면의 유리문 계단 입구로 들어와 지하 1층(B1)으로 내려오세요.",
   entrancePhotoPath: "./assets/entrance.jpg",
