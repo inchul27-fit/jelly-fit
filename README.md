@@ -10,9 +10,27 @@
 
 전화번호와 도로명 주소는 젤리핏 간판 작업지시서를 반영했습니다. 입구 사진은 같은 자료에 나온 정면 계단 입구의 간판 교체 전 현장 사진입니다. 간판 교체 후 사진이 있으면 사진과 설명을 함께 갱신하세요.
 
-## 승인 후 공개 및 QR 연결
+## 공개 주소와 배포
 
-1. 카카오톡 채널의 1:1 채팅 링크와 젤리핏 네이버 플레이스 공유 링크를 넣습니다.
-2. 젤리핏이 관리하는 GitHub 저장소의 `main` 브랜치 루트에 `index.html`, `style.css`, `site.js`, `assets/`를 올립니다. 저장소의 **Settings → Pages**에서 **Deploy from a branch → main → /(root)**를 선택합니다. [GitHub Pages 배포 설정](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
-3. 호스팅을 옮겨도 QR 주소를 유지하려면 젤리핏이 관리하는 도메인 또는 하위 도메인을 연결하고 HTTPS를 적용합니다. 해당 도메인과 경로를 고정한 채 이후 수정분을 같은 브랜치에 올리면 같은 주소에서 페이지가 업데이트됩니다. [사용자 지정 도메인 연결](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
-4. 최종 HTTPS 주소로 QR을 만든 뒤, 인쇄 전에 휴대폰 카메라로 스캔해 페이지와 세 버튼을 확인합니다.
+간판 QR의 고정 주소는 **https://inchul27-fit.github.io/jelly-fit/** 입니다. 저장소 이름, GitHub 소유자와 공개 경로를 유지합니다. `main` 브랜치 루트의 파일을 수정하면 GitHub Pages가 같은 주소로 배포합니다. 연락처 링크를 수정할 때는 `index.html`의 `site.js?v=...` 버전도 갱신합니다.
+
+카카오톡 상담, 전화, 네이버 플레이스와 블로그 주소는 `site.js`에 연결되어 있습니다.
+
+## 관리자용 접속 통계
+
+Google Analytics 4 측정 ID는 `G-EQTSNH6LLK`입니다. `index.html`에서 Google 태그를 한 번 불러와 페이지 조회를 수집하고, `site.js`에서 아래 버튼 클릭 이벤트를 보냅니다. Google Signals와 광고 개인 최적화 신호는 사용하지 않습니다. 페이지에 방문자 수를 공개 표시하지 않습니다.
+
+| 버튼 | 이벤트 이름 |
+| --- | --- |
+| 카카오톡 상담 | `kakao_click` |
+| 전화 문의 | `phone_click` |
+| 시설 사진 · 위치 | `naver_place_click` |
+| 블로그 | `blog_click` |
+
+[Google Analytics](https://analytics.google.com/)에서 젤리핏 속성을 선택합니다.
+
+- **실시간 보고서:** 배포 후 휴대폰으로 랜딩 페이지에 접속하고 버튼을 눌러 방문과 이벤트 수신을 확인합니다.
+- **보고서 → 참여도 → 페이지 및 화면:** 날짜 범위를 하루로 선택하면 일일 조회수, 수집 시작일부터 선택하면 누적 조회수를 확인할 수 있습니다. 메뉴가 보이지 않으면 보고서 검색을 이용합니다.
+- **이벤트 보고서:** 위 이름으로 각 버튼의 클릭 수를 확인합니다. 클릭 수는 실제 상담 완료나 등록 건수를 의미하지 않습니다.
+
+날짜 경계는 GA4 속성의 보고 시간대(대한민국)를 따릅니다. 조회수는 같은 사람의 재방문·새로고침도 포함하므로 방문자 수와 구분합니다. 고유 방문자 수를 기간별로 볼 때는 해당 기간의 사용자 수를 사용하며 일별 사용자 수를 합산하지 않습니다. 통계는 설치 이후부터 쌓이고, 일반 보고서 반영에는 보통 24~48시간이 걸릴 수 있습니다. 광고 차단 등으로 일부 방문이 집계되지 않을 수 있습니다.

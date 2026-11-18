@@ -18,19 +18,23 @@ function webUrl(value) {
   }
 }
 
-function enableLink(id, href) {
+function enableLink(id, href, eventName) {
   if (!href) return;
   const link = document.getElementById(id);
   link.href = href;
   link.removeAttribute("aria-disabled");
   link.removeAttribute("role");
+  link.addEventListener("click", () => {
+    if (typeof window.gtag !== "function") return;
+    window.gtag("event", eventName, { transport_type: "beacon" });
+  });
 }
 
-enableLink("kakao", webUrl(site.kakaoChatUrl));
+enableLink("kakao", webUrl(site.kakaoChatUrl), "kakao_click");
 const phone = site.phoneNumber.trim().replace(/[\s().-]/g, "");
-enableLink("phone", /^\+?\d{7,15}$/.test(phone) ? `tel:${phone}` : "");
-enableLink("place", webUrl(site.naverPlaceUrl));
-enableLink("blog", webUrl(site.blogUrl));
+enableLink("phone", /^\+?\d{7,15}$/.test(phone) ? `tel:${phone}` : "", "phone_click");
+enableLink("place", webUrl(site.naverPlaceUrl), "naver_place_click");
+enableLink("blog", webUrl(site.blogUrl), "blog_click");
 
 function showText(id, value) {
   if (!value) return;
