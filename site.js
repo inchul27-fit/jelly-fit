@@ -30,11 +30,11 @@ function enableLink(id, href, eventName) {
   });
 }
 
-enableLink("kakao", webUrl(site.kakaoChatUrl), "kakao_click");
+enableLink("kakao", webUrl(site.kakaoChatUrl), "카카오톡_상담_클릭");
 const phone = site.phoneNumber.trim().replace(/[\s().-]/g, "");
-enableLink("phone", /^\+?\d{7,15}$/.test(phone) ? `tel:${phone}` : "", "phone_click");
-enableLink("place", webUrl(site.naverPlaceUrl), "naver_place_click");
-enableLink("blog", webUrl(site.blogUrl), "blog_click");
+enableLink("phone", /^\+?\d{7,15}$/.test(phone) ? `tel:${phone}` : "", "전화_문의_클릭");
+enableLink("place", webUrl(site.naverPlaceUrl), "시설사진_위치_클릭");
+enableLink("blog", webUrl(site.blogUrl), "블로그_클릭");
 
 function showText(id, value) {
   if (!value) return;

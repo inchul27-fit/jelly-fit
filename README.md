@@ -22,10 +22,14 @@ Google Analytics 4 측정 ID는 `G-EQTSNH6LLK`입니다. `index.html`에서 Goog
 
 | 버튼 | 이벤트 이름 |
 | --- | --- |
-| 카카오톡 상담 | `kakao_click` |
-| 전화 문의 | `phone_click` |
-| 시설 사진 · 위치 | `naver_place_click` |
-| 블로그 | `blog_click` |
+| 카카오톡 상담 | `카카오톡_상담_클릭` |
+| 전화 문의 | `전화_문의_클릭` |
+| 시설 사진 · 위치 | `시설사진_위치_클릭` |
+| 블로그 | `블로그_클릭` |
+
+한글 이름은 변경 배포 이후 클릭부터 적용됩니다. 이전 영어 이름(`kakao_click`, `phone_click`, `naver_place_click`, `blog_click`)으로 수집된 기록은 기존 이름으로 남습니다. 배포 전부터 페이지를 열어 둔 방문자는 새로고침 전까지 이전 이름으로 기록될 수 있습니다. 변경 전후 기간을 함께 비교할 때는 두 이름의 클릭 수를 함께 봅니다.
+
+GA4가 자동 수집하는 `first_visit`(첫 방문), `page_view`(페이지 조회), `session_start`(방문 시작)는 기본 이름을 유지합니다.
 
 [Google Analytics](https://analytics.google.com/)에서 젤리핏 속성을 선택합니다.
 
