@@ -4,9 +4,9 @@ const site = {
   naverPlaceUrl: "https://naver.me/GQGxaCWJ",
   blogUrl: "https://blog.naver.com/jellyfitness",
   address: "인천 부평구 길주남로10번길 21",
-  entranceNote: "상가 정면의 유리문 계단 입구로 들어와 지하 1층(B1)으로 내려오세요.",
-  entrancePhotoPath: "./assets/entrance.jpg",
-  entrancePhotoCaption: "상가 정면 계단 입구 · 간판 교체 전 사진",
+  entranceNote: "KT 매장 옆 상가 정면의 유리문 계단 입구로 들어와서 지하 1층(B1)으로 내려오세요.",
+  entrancePhotoPath: "./assets/entrance.jpg?v=20261123",
+  entrancePhotoCaption: "상가 정면 유리문 계단 입구 · 노란 젤리핏 간판",
 };
 
 function webUrl(value) {
