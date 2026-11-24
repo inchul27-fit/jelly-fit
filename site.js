@@ -55,3 +55,10 @@ if (site.entrancePhotoPath) {
   }, { once: true });
   photo.src = site.entrancePhotoPath;
 }
+
+for (const [id, eventName] of [["info", "센터정보_열기"], ["faq", "FAQ_열기"]]) {
+  document.getElementById(id).addEventListener("toggle", (event) => {
+    if (!event.target.open || typeof window.gtag !== "function") return;
+    window.gtag("event", eventName);
+  });
+}

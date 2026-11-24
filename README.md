@@ -18,7 +18,7 @@
 
 ## AI·검색 노출 정보 (구조화 데이터)
 
-`index.html`의 `<head>`에 검색 결과·SNS 공유용 정보(title, description, canonical, Open Graph)와 schema.org JSON-LD 두 개(`ExerciseGym`/`HealthClub` 센터 정보, `FAQPage` 자주 묻는 질문)가 있습니다. 주소, 전화, 운영시간, FAQ 문구를 바꿀 때는 본문의 **센터 정보**·**자주 묻는 질문** 섹션과 JSON-LD를 함께 같은 글자로 고칩니다. 가격·할인·이벤트 문구는 넣지 않고 카카오톡·전화 상담으로 안내합니다.
+`index.html`의 `<head>`에 검색 결과·SNS 공유용 정보(title, description, canonical, Open Graph)와 schema.org JSON-LD 두 개(`ExerciseGym`/`HealthClub` 센터 정보, `FAQPage` 자주 묻는 질문)가 있습니다. 주소, 전화, 운영시간, FAQ 문구를 바꿀 때는 블로그 버튼 아래 **센터 정보**·**자주 묻는 질문** 펼침 버튼 내용과 JSON-LD를 함께 같은 글자로 고칩니다. 가격·할인·이벤트 문구는 넣지 않고 카카오톡·전화 상담으로 안내합니다.
 
 `sitemap.xml`은 페이지를 수정해 배포할 때 `<lastmod>` 날짜를 갱신합니다. GitHub Pages 프로젝트 사이트는 도메인 루트의 `robots.txt`를 둘 수 없으므로, 사이트맵은 Google Search Console·네이버 서치어드바이저에 직접 제출합니다.
 
@@ -32,6 +32,8 @@ Google Analytics 4 측정 ID는 `G-EQTSNH6LLK`입니다. `index.html`에서 Goog
 | 전화 문의 | `전화_문의_클릭` |
 | 시설 사진 · 위치 | `시설사진_위치_클릭` |
 | 블로그 | `블로그_클릭` |
+| 센터 정보 펼치기 | `센터정보_열기` |
+| 자주 묻는 질문 펼치기 | `FAQ_열기` |
 
 한글 이름은 변경 배포 이후 클릭부터 적용됩니다. 이전 영어 이름(`kakao_click`, `phone_click`, `naver_place_click`, `blog_click`)으로 수집된 기록은 기존 이름으로 남습니다. 배포 전부터 페이지를 열어 둔 방문자는 새로고침 전까지 이전 이름으로 기록될 수 있습니다. 변경 전후 기간을 함께 비교할 때는 두 이름의 클릭 수를 함께 봅니다.
 
