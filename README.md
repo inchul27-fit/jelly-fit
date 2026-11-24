@@ -12,14 +12,14 @@
 
 ## 공개 주소와 배포
 
-간판 QR의 고정 주소는 **https://inchul27-fit.github.io/jelly-fit/** 입니다. 저장소 이름, GitHub 소유자와 공개 경로를 유지합니다. `main` 브랜치 루트의 파일을 수정하면 GitHub Pages가 같은 주소로 배포합니다. `style.css`나 `site.js`를 수정할 때는 `index.html`의 `?v=...` 버전도 갱신합니다.
+공식 주소는 **https://jellyfit.kr/** 입니다(가비아에서 구매, 가비아 네임서버 사용). 저장소의 `CNAME` 파일과 GitHub **Settings → Pages → Custom domain**으로 연결되어 있습니다. 기존 간판 QR 주소 **https://inchul27-fit.github.io/jelly-fit/** 은 GitHub가 새 주소로 자동 연결하므로, 저장소 이름(`jelly-fit`)과 GitHub 소유자(`inchul27-fit`)를 바꾸거나 GitHub Pages를 끄면 기존 QR이 깨집니다. 새로 인쇄하는 QR은 `https://jellyfit.kr/`로 만듭니다. 도메인 자동 연장을 유지합니다. `main` 브랜치 루트의 파일을 수정하면 GitHub Pages가 같은 주소로 배포합니다. `style.css`나 `site.js`를 수정할 때는 `index.html`의 `?v=...` 버전도 갱신합니다.
 
 
 ## AI·검색 노출 정보 (구조화 데이터)
 
 `index.html`의 `<head>`에 검색 결과·SNS 공유용 정보(title, description, canonical, Open Graph)와 schema.org JSON-LD 두 개(`ExerciseGym`/`HealthClub` 센터 정보, `FAQPage` 자주 묻는 질문)가 있습니다. 주소, 전화, 운영시간, FAQ 문구를 바꿀 때는 블로그 버튼 아래 **센터 정보**·**자주 묻는 질문** 펼침 버튼 내용과 JSON-LD를 함께 같은 글자로 고칩니다. 가격·할인·이벤트 문구는 넣지 않고 카카오톡·전화 상담으로 안내합니다.
 
-`sitemap.xml`은 페이지를 수정해 배포할 때 `<lastmod>` 날짜를 갱신합니다. GitHub Pages 프로젝트 사이트는 도메인 루트의 `robots.txt`를 둘 수 없으므로, 사이트맵은 Google Search Console·네이버 서치어드바이저에 직접 제출합니다.
+`sitemap.xml`은 페이지를 수정해 배포할 때 `<lastmod>` 날짜를 갱신합니다. `robots.txt`는 모든 검색 로봇을 허용하고 사이트맵 위치를 알려 줍니다. 사이트맵은 Google Search Console·네이버 서치어드바이저에도 제출합니다.
 
 ## 관리자용 접속 통계
 
