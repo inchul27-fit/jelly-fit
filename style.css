@@ -75,8 +75,6 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 .action svg { width: 23px; height: 23px; }
 .action-end { justify-self: end; }
 .action[href] .action-end::after { content: "↗"; font-size: 19px; }
-.action[aria-disabled="true"] { cursor: default; }
-.action[aria-disabled="true"] .action-end::after { content: "준비 중"; font-size: 11px; color: #514b3d; }
 .action:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 .action[href]:active { transform: translateY(1px); }
 
@@ -87,7 +85,6 @@ h2 { margin: 0; font-size: clamp(25px, 7.2vw, 35px); line-height: 1.25; letter-s
 .copy { margin: 12px 0 0; color: var(--muted); font-size: 15px; line-height: 1.75; word-break: keep-all; }
 .entrance { margin: 15px 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
 .entrance img { display: block; width: 100%; height: auto; }
-.photo-placeholder { display: grid; place-items: center; min-height: 124px; color: var(--muted); font-size: 13px; background: #f0e9d9; }
 figcaption { padding: 9px 12px; color: var(--muted); font-size: 12px; }
 .address { display: flex; gap: 11px; align-items: flex-start; font-size: 14px; }
 .address p { margin: 0 0 4px; line-height: 1.5; }

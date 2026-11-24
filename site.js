@@ -1,64 +1,22 @@
-const site = {
-  kakaoChatUrl: "https://pf.kakao.com/_xeXpNX/chat",
-  phoneNumber: "010-4538-9195",
-  naverPlaceUrl: "https://naver.me/GQGxaCWJ",
-  blogUrl: "https://blog.naver.com/jellyfitness",
-  address: "인천 부평구 길주남로10번길 21 상가1동 지하1층",
-  entranceNote: "KT 매장 옆 상가 정면의 유리문 계단 입구로 들어와서 지하 1층(B1)으로 내려오세요.",
-  entrancePhotoPath: "./assets/entrance.jpg?v=20261123",
-  entrancePhotoCaption: "상가 정면 유리문 계단 입구 · 노란 젤리핏 간판",
-};
-
-function webUrl(value) {
-  try {
-    const url = new URL(value);
-    return url.protocol === "https:" ? url.href : "";
-  } catch {
-    return "";
-  }
+// 버튼 링크·주소·사진은 index.html에 직접 적혀 있습니다. 이 파일은 GA4 이벤트만 보냅니다.
+function track(eventName, params) {
+  if (typeof window.gtag !== "function") return;
+  window.gtag("event", eventName, params);
 }
 
-function enableLink(id, href, eventName) {
-  if (!href) return;
-  const link = document.getElementById(id);
-  link.href = href;
-  link.removeAttribute("aria-disabled");
-  link.removeAttribute("role");
-  link.addEventListener("click", () => {
-    if (typeof window.gtag !== "function") return;
-    window.gtag("event", eventName, { transport_type: "beacon" });
+for (const [id, eventName] of [
+  ["kakao", "카카오톡_상담_클릭"],
+  ["phone", "전화_문의_클릭"],
+  ["place", "시설사진_위치_클릭"],
+  ["blog", "블로그_클릭"],
+]) {
+  document.getElementById(id).addEventListener("click", () => {
+    track(eventName, { transport_type: "beacon" });
   });
-}
-
-enableLink("kakao", webUrl(site.kakaoChatUrl), "카카오톡_상담_클릭");
-const phone = site.phoneNumber.trim().replace(/[\s().-]/g, "");
-enableLink("phone", /^\+?\d{7,15}$/.test(phone) ? `tel:${phone}` : "", "전화_문의_클릭");
-enableLink("place", webUrl(site.naverPlaceUrl), "시설사진_위치_클릭");
-enableLink("blog", webUrl(site.blogUrl), "블로그_클릭");
-
-function showText(id, value) {
-  if (!value) return;
-  const element = document.getElementById(id);
-  element.textContent = value;
-  element.hidden = false;
-}
-
-showText("address", site.address);
-showText("entrance-note", site.entranceNote);
-
-if (site.entrancePhotoPath) {
-  const photo = document.getElementById("entrance-photo");
-  photo.addEventListener("load", () => {
-    document.getElementById("entrance-placeholder").hidden = true;
-    photo.hidden = false;
-    showText("entrance-caption", site.entrancePhotoCaption);
-  }, { once: true });
-  photo.src = site.entrancePhotoPath;
 }
 
 for (const [id, eventName] of [["info", "센터정보_열기"], ["faq", "FAQ_열기"]]) {
   document.getElementById(id).addEventListener("toggle", (event) => {
-    if (!event.target.open || typeof window.gtag !== "function") return;
-    window.gtag("event", eventName);
+    if (event.target.open) track(eventName);
   });
 }
