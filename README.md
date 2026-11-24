@@ -16,6 +16,12 @@
 
 카카오톡 상담, 전화, 네이버 플레이스와 블로그 주소는 `site.js`에 연결되어 있습니다.
 
+## AI·검색 노출 정보 (구조화 데이터)
+
+`index.html`의 `<head>`에 검색 결과·SNS 공유용 정보(title, description, canonical, Open Graph)와 schema.org JSON-LD 두 개(`ExerciseGym`/`HealthClub` 센터 정보, `FAQPage` 자주 묻는 질문)가 있습니다. 주소, 전화, 운영시간, FAQ 문구를 바꿀 때는 본문의 **센터 정보**·**자주 묻는 질문** 섹션과 JSON-LD를 함께 같은 글자로 고칩니다. 가격·할인·이벤트 문구는 넣지 않고 카카오톡·전화 상담으로 안내합니다.
+
+`sitemap.xml`은 페이지를 수정해 배포할 때 `<lastmod>` 날짜를 갱신합니다. GitHub Pages 프로젝트 사이트는 도메인 루트의 `robots.txt`를 둘 수 없으므로, 사이트맵은 Google Search Console·네이버 서치어드바이저에 직접 제출합니다.
+
 ## 관리자용 접속 통계
 
 Google Analytics 4 측정 ID는 `G-EQTSNH6LLK`입니다. `index.html`에서 Google 태그를 한 번 불러와 페이지 조회를 수집하고, `site.js`에서 아래 버튼 클릭 이벤트를 보냅니다. Google Signals와 광고 개인 최적화 신호는 사용하지 않습니다. 페이지에 방문자 수를 공개 표시하지 않습니다.
